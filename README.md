@@ -29,6 +29,11 @@ Finally, install dependencies :
 uv sync
 ```
 
+## Run locally
+```shell
+python meri/app.py
+```
+
 ## Run the tests
 ```shell
 pytest tests
