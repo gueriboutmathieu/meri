@@ -1,0 +1,23 @@
+name: On commit on main branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-python-code:
+    name: Check python code
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@main
+    secrets: inherit
+    with:
+      pytest-root: "."
+      check_alembic_migrations: true
+
+  build-and-release:
+    name: Build and release
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@main
+    needs: check-python-code
+    secrets: inherit
+    with:
+      package-name: "meri"
