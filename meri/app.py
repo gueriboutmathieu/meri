@@ -1,31 +1,24 @@
 import uvicorn
 
-from meri.config.postgres_config import PostgresConfig
+from meri.config.openai_config import OpenaiConfig
 from meri.domain.domain import Domain
+from meri.services.llm import Llm
 from meri.fastapi.fastapi_app import FastapiApp
-from python_utils.sqlalchemy_postgresql_engine_wrapper import SqlAlchemyPostgresqlEngineWrapper
 
 
-postgres_config = PostgresConfig()
-sqlalchemy_postgresql_engine_wrapper = SqlAlchemyPostgresqlEngineWrapper(
-    sql_user=postgres_config.sql_user,
-    sql_password=postgres_config.sql_password,
-    sql_host=postgres_config.sql_host,
-    sql_port=postgres_config.sql_port,
-    sql_database=postgres_config.sql_database,
-    pool_size=5,
-)
+openai_config = OpenaiConfig()
+llm = Llm(api_key=openai_config.openai_api_key, model=openai_config.model)
 
 
 class CommandContext:
     def __init__(self):
-        self.sqlalchemy_session = sqlalchemy_postgresql_engine_wrapper.create_session()
-    
+        self.llm = llm
+
     def commit(self):
-        self.sqlalchemy_session.commit()
-    
+        pass
+
     def rollback(self):
-        self.sqlalchemy_session.rollback()
+        pass
 
 
 

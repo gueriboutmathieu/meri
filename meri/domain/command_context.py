@@ -1,7 +1,13 @@
 from typing import Protocol
 
+from meri.services.llm import Llm
+
 
 class CommandContext(Protocol):
+    @property
+    def llm(self) -> Llm:
+        ...
+
     def rollback(self) -> None:
         ...
 
@@ -9,8 +15,11 @@ class CommandContext(Protocol):
         ...
 
 
-def make_context() -> CommandContext:
+def make_context(llm: Llm) -> CommandContext:
     class CC:
+        def __init__(self) -> None:
+            self.llm = llm
+
         def rollback(self) -> None:
             ...
 

@@ -29,6 +29,13 @@ Finally, install dependencies :
 uv sync
 ```
 
+## Environment variables
+Create a `.env` file with these variables:
+```
+OPENAI_API_KEY=<your-openai-api-key>
+OPENAI_MODEL=<openai-model>
+```
+
 ## Run locally
 ```shell
 python meri/app.py

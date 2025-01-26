@@ -12,3 +12,6 @@
 
 # coverage
 .coverage
+
+# env files
+.env
