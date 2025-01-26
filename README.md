@@ -37,6 +37,12 @@ OPENAI_MODEL=<openai-model>
 ```
 
 ## Run locally
+Run postgresql database:
+```shell
+docker compose up -d
+```
+
+Run the app:
 ```shell
 python meri/app.py
 ```
