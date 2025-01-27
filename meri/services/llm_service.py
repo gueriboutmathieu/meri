@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-from meri.domain.entities.prompt_category import PromptCategory
+from meri.domain.entities.prompt_category_enum import PromptCategory
 
 
 class LlmService:

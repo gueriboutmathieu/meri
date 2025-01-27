@@ -2,8 +2,8 @@ from logging import Logger
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from meri.domain.entities.statement import Statement
-from meri.domain.exceptions.statement import StatementConstraintException, StatementNotFoundException
+from meri.domain.entities.statement_entity import Statement
+from meri.domain.exceptions.statement_exceptions import StatementConstraintException, StatementNotFoundException
 from python_utils.sqlalchemy_crud_repository import SQLAlchemyCRUDRepository
 
 

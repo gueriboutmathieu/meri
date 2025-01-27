@@ -1,8 +1,8 @@
 from uuid6 import uuid7
 
 from meri.domain.command_context import CommandContext
-from meri.domain.entities.prompt_category import PromptCategory
-from meri.domain.entities.statement import Statement
+from meri.domain.entities.prompt_category_enum import PromptCategory
+from meri.domain.entities.statement_entity import Statement
 
 
 def query_llm_command(context: CommandContext, user_prompt: str) -> str:
