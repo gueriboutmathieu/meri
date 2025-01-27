@@ -41,6 +41,16 @@ repository = "https://github.com/gueriboutmathieu/meri"
 [tool.uv]
 package = true  # Install current package when running `uv sync`
 
+[build-system]
+requires = ["setuptools==75.8.*", "wheel==0.45.*", "setuptools-scm[toml]==8.1.*"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+meri = ["*.pyi"]
+
+[tool.setuptools]
+packages = ["meri"]
+
 [tool.coverage.run]
 source = ["meri"]
 relative_files = true
