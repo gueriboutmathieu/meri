@@ -3,6 +3,7 @@ from alembic import context
 from logging.config import fileConfig
 from sqlalchemy import engine_from_config, pool
 
+from meri.domain.entities.statement import Statement  # pyright: ignore  # noqa: F401
 from python_utils.entity import Entity
 
 # this is the Alembic Config object, which provides
