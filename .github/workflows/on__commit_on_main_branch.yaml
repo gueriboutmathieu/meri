@@ -8,22 +8,23 @@ on:
 jobs:
   check-python-code:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.13
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.14
     secrets: inherit
     with:
       pytest-root: "."
 
   validate-alembic-migrations:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__validate_alembic_migrations.yaml@1.0.13
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__validate_alembic_migrations.yaml@1.0.14
     needs: check-python-code
     secrets: inherit
     with:
       docker_image: "pgvector/pgvector:pg17"
+      env-vars: '{"VECTOR_DIMENSIONS: "1536"}'
 
   build-and-release:
     name: Build and release
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.13
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.14
     needs: validate-alembic-migrations
     secrets: inherit
     with:
