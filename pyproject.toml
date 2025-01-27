@@ -1,7 +1,7 @@
 [project]
 name = "meri"
 description = "Your loyal companion, helping you stay organized and remember what truly matters."
-version = "1.0.8"
+version = "1.0.9"
 authors = [{ name = "Mathieu Gueribout", email = "gueribout.mathieu@protonmail.com" }]
 maintainers = [{ name = "Mathieu Gueribout", email = "gueribout.mathieu@protonmail.com" }]
 readme = "README.md"
@@ -49,7 +49,18 @@ build-backend = "setuptools.build_meta"
 meri = ["*.pyi"]
 
 [tool.setuptools]
-packages = ["meri"]
+packages = [
+    "meri",
+    "meri.config",
+    "meri.domain",
+    "meri.domain.commands",
+    "meri.domain.entities",
+    "meri.domain.exceptions",
+    "meri.fastapi",
+    "meri.fastapi.routes",
+    "meri.repositories",
+    "meri.services",
+]
 
 [tool.coverage.run]
 source = ["meri"]
