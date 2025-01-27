@@ -19,8 +19,6 @@ jobs:
     needs: check-python-code
     secrets: inherit
     with:
-      sql_port: "55432"
-      sql_database: "meri"
       docker_image: "pgvector/pgvector:pg17"
 
   build-and-release:
