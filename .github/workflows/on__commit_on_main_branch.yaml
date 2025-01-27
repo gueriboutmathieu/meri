@@ -20,7 +20,7 @@ jobs:
     secrets: inherit
     with:
       docker_image: "pgvector/pgvector:pg17"
-      env-vars: '{"VECTOR_DIMENSIONS": "1536"}'
+      env-vars: '{"VECTOR_DIMENSIONS": "1536", "VECTOR_DATABASE_FILE_PATH": "vector_database.bin"}'
 
   build-and-release:
     name: Build and release
