@@ -6,16 +6,9 @@ on:
       - main
 
 jobs:
-  setup-git-user:
-    name: Set up Git user
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Git user
-        uses: fregante/setup-git-user@v2
-
   check-python-code:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@main
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.9
     secrets: inherit
     with:
       pytest-root: "."
@@ -23,7 +16,7 @@ jobs:
 
   build-and-release:
     name: Build and release
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@main
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.9
     needs: check-python-code
     secrets: inherit
     with:
