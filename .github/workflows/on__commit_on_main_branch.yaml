@@ -16,6 +16,7 @@ jobs:
   validate-alembic-migrations:
     name: Check python code
     uses: gueriboutmathieu/python_utils/.github/workflows/callable__validate_alembic_migrations.yaml@1.0.11
+    needs: check-python-code
     secrets: inherit
     with:
       sql_port: "55432"
@@ -25,7 +26,7 @@ jobs:
   build-and-release:
     name: Build and release
     uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.11
-    needs: check-python-code
+    needs: validate-alembic-migrations
     secrets: inherit
     with:
       package-name: "meri"
