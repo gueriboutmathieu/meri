@@ -5,5 +5,5 @@ on: pull_request
 jobs:
   check-python-code:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.9
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.10
     secrets: inherit

@@ -8,7 +8,7 @@ on:
 jobs:
   check-python-code:
     name: Check python code
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.9
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__check_python_code.yaml@1.0.10
     secrets: inherit
     with:
       pytest-root: "."
@@ -16,7 +16,7 @@ jobs:
 
   build-and-release:
     name: Build and release
-    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.9
+    uses: gueriboutmathieu/python_utils/.github/workflows/callable__build_and_release.yaml@1.0.10
     needs: check-python-code
     secrets: inherit
     with:
