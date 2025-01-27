@@ -351,7 +351,7 @@ requires-dist = [
     { name = "pytest-mock", specifier = "==3.14.*" },
     { name = "python-dotenv", specifier = "==1.0.*" },
     { name = "python-json-logger", specifier = "==3.2.*" },
-    { name = "python-utils", git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.10" },
+    { name = "python-utils", git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.11" },
     { name = "requests", specifier = "==2.32.*" },
     { name = "ruff", specifier = "==0.9.*" },
     { name = "sqlalchemy", specifier = "==2.0.*" },
@@ -629,8 +629,8 @@ wheels = [
 
 [[package]]
 name = "python-utils"
-version = "1.0.10"
-source = { git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.10#05237403e6728d762cd091ac0fe58bdf370d3655" }
+version = "1.0.11"
+source = { git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.11#c8e2606912c2ff65147d436155159e3c468e502d" }
 dependencies = [
     { name = "alembic" },
     { name = "coverage" },

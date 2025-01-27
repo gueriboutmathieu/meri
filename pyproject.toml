@@ -26,7 +26,7 @@ dependencies = [
     "pytest-mock==3.14.*",
     "python-dotenv==1.0.*",
     "python-json-logger==3.2.*",
-    "python_utils@git+https://github.com/gueriboutmathieu/python_utils@1.0.10",
+    "python_utils@git+https://github.com/gueriboutmathieu/python_utils@1.0.11",
     "requests==2.32.*",
     "ruff==0.9.*",
     "sqlalchemy==2.0.*",
