@@ -12,6 +12,7 @@ jobs:
     secrets: inherit
     with:
       pytest-root: "."
+      env-vars: '{"VECTOR_DIMENSIONS": "1536", "VECTOR_DATABASE_FILE_PATH": "vector_database.bin"}'
 
   validate-alembic-migrations:
     name: Check python code
