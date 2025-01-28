@@ -305,7 +305,7 @@ wheels = [
 
 [[package]]
 name = "meri"
-version = "1.0.10"
+version = "1.0.11"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -351,7 +351,7 @@ requires-dist = [
     { name = "pytest-mock", specifier = "==3.14.*" },
     { name = "python-dotenv", specifier = "==1.0.*" },
     { name = "python-json-logger", specifier = "==3.2.*" },
-    { name = "python-utils", git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.15" },
+    { name = "python-utils", git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.16" },
     { name = "requests", specifier = "==2.32.*" },
     { name = "ruff", specifier = "==0.9.*" },
     { name = "sqlalchemy", specifier = "==2.0.*" },
@@ -629,8 +629,8 @@ wheels = [
 
 [[package]]
 name = "python-utils"
-version = "1.0.15"
-source = { git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.15#a1090f3a15013e785380ca3676d8399843f2d8cf" }
+version = "1.0.16"
+source = { git = "https://github.com/gueriboutmathieu/python_utils?rev=1.0.16#32bdca42a453ef4068618dfe42189ca9e099b603" }
 dependencies = [
     { name = "alembic" },
     { name = "coverage" },
