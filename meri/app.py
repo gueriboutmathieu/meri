@@ -7,7 +7,8 @@ from meri.domain.domain import Domain
 from meri.repositories.statement_repository import StatementRepository
 from meri.services.embedding_service import EmbeddingService
 from meri.services.llm_service import LlmService
-from meri.fastapi.fastapi_app import FastapiApp
+from meri.services.transcription_service import TranscriptionService
+from meri.routes.fastapi_app import FastapiApp
 from python_utils.loggers import get_logger
 from python_utils.sqlalchemy_postgresql_engine_wrapper import SqlAlchemyPostgresqlEngineWrapper
 
@@ -29,6 +30,7 @@ embedding_service = EmbeddingService(
     vector_dimensions=vector_config.vector_dimensions
 )
 llm_service = LlmService(api_key=openai_config.openai_api_key, model=openai_config.llm_model)
+transcription_service = TranscriptionService(api_key=openai_config.openai_api_key, model=openai_config.transcription_model)
 
 
 # SQLAlchemyEngineWrapper
@@ -53,6 +55,7 @@ class CommandContext:
         self.statement_repository = statement_repository
         self.llm_service = llm_service
         self.embedding_service = embedding_service
+        self.transcription_service = transcription_service
 
     def commit(self):
         self.sqlalchemy_session.commit()

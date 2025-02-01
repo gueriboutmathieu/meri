@@ -4,10 +4,11 @@ from logging import Logger
 from sqlalchemy.orm import Session
 
 from meri.domain.domain import Domain
-from meri.fastapi.fastapi_app import FastapiApp
+from meri.routes.fastapi_app import FastapiApp
 from meri.repositories.statement_repository import StatementRepository
 from meri.services.embedding_service import EmbeddingService
 from meri.services.llm_service import LlmService
+from meri.services.transcription_service import TranscriptionService
 
 
 class MockedCommandContext:
@@ -15,6 +16,7 @@ class MockedCommandContext:
         self._llm_service = LlmService("", "")
         self._embedding_service = EmbeddingService("", "", 0)
         self._statement_repository = StatementRepository(Session(), Logger(__name__))
+        self._transcription_service = TranscriptionService("", "")
 
     @property
     def llm_service(self):
@@ -27,6 +29,10 @@ class MockedCommandContext:
     @property
     def statement_repository(self):
         return self._statement_repository
+
+    @property
+    def transcription_service(self):
+        return self._transcription_service
 
     def commit(self) -> None:
         pass
