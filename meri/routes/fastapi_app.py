@@ -2,7 +2,7 @@ import importlib.metadata
 from fastapi import FastAPI
 
 from meri.domain.domain import Domain
-from meri.fastapi.routes import llm_routes
+from meri.routes import llm_routes
 from python_utils import fastapi_generic_routes as generic_routes
 from python_utils import fastapi_middleware as catch_exceptions_middleware
 

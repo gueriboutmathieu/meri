@@ -33,6 +33,7 @@ dependencies = [
     "types-sqlalchemy-utils==1.1.*",
     "uuid6==2024.7.*",
     "uvicorn==0.34.*",
+    "python-multipart==0.0.20",
 ]
 
 [project.urls]
@@ -56,8 +57,7 @@ packages = [
     "meri.domain.commands",
     "meri.domain.entities",
     "meri.domain.exceptions",
-    "meri.fastapi",
-    "meri.fastapi.routes",
+    "meri.routes",
     "meri.repositories",
     "meri.services",
 ]
