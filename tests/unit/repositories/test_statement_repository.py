@@ -40,7 +40,7 @@ def test_statement_repository_search(mocker: MockerFixture, statement_repository
     mock_query.order_by.return_value = mock_query  # pyright: ignore
     mock_query.limit.return_value = mock_query  # pyright: ignore
     expected_statements = [
-        Statement(id=uuid7(), content="Statement 1", vector=vector)
+        Statement(id=uuid7(), content="Statement 1", vector=vector)  # pyright: ignore
     ]
     mock_query.all.return_value = expected_statements  # pyright: ignore
 

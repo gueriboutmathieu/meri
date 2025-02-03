@@ -5,9 +5,7 @@ from meri.domain.entities.prompt_category_enum import PromptCategory
 from meri.domain.entities.statement_entity import Statement
 
 
-def query_command(context: CommandContext, audio_bytes: bytes) -> str:
-    user_prompt = context.transcription_service.transcribe(audio_bytes)
-
+def query_command(context: CommandContext, user_prompt: str) -> str:
     category = context.llm_service.categorize(user_prompt)
 
     match category:
