@@ -5,15 +5,15 @@
 | Name                                            |    Stmts |     Miss |   Cover |   Missing |
 |------------------------------------------------ | -------: | -------: | ------: | --------: |
 | meri/\_\_init\_\_.py                            |        0 |        0 |    100% |           |
-| meri/app.py                                     |       39 |       39 |      0% |      1-77 |
+| meri/app.py                                     |       36 |       36 |      0% |      1-74 |
 | meri/config/\_\_init\_\_.py                     |        0 |        0 |    100% |           |
-| meri/config/openai\_config.py                   |        7 |        0 |    100% |           |
+| meri/config/openai\_config.py                   |        6 |        0 |    100% |           |
 | meri/config/postgresql\_config.py               |        8 |        0 |    100% |           |
 | meri/config/vector\_config.py                   |        6 |        0 |    100% |           |
 | meri/domain/\_\_init\_\_.py                     |        0 |        0 |    100% |           |
-| meri/domain/command\_context.py                 |       34 |       17 |     50% |12, 16, 20, 24, 27, 30, 39-52 |
+| meri/domain/command\_context.py                 |       29 |       15 |     48% |11, 15, 19, 22, 25, 33-45 |
 | meri/domain/commands/\_\_init\_\_.py            |        0 |        0 |    100% |           |
-| meri/domain/commands/query\_command.py          |       20 |        0 |    100% |           |
+| meri/domain/commands/query\_command.py          |       19 |        0 |    100% |           |
 | meri/domain/domain.py                           |        7 |        0 |    100% |           |
 | meri/domain/entities/\_\_init\_\_.py            |        0 |        0 |    100% |           |
 | meri/domain/entities/prompt\_category\_enum.py  |        4 |        0 |    100% |           |
@@ -24,12 +24,11 @@
 | meri/repositories/statement\_repository.py      |       16 |        1 |     94% |        12 |
 | meri/routes/\_\_init\_\_.py                     |        0 |        0 |    100% |           |
 | meri/routes/fastapi\_app.py                     |       14 |        0 |    100% |           |
-| meri/routes/llm\_routes.py                      |        7 |        0 |    100% |           |
+| meri/routes/llm\_routes.py                      |        6 |        0 |    100% |           |
 | meri/services/\_\_init\_\_.py                   |        0 |        0 |    100% |           |
 | meri/services/embedding\_service.py             |       10 |        0 |    100% |           |
 | meri/services/llm\_service.py                   |       18 |        0 |    100% |           |
-| meri/services/transcription\_service.py         |       14 |        5 |     64% |     13-23 |
-|                                       **TOTAL** |  **223** |   **64** | **71%** |           |
+|                                       **TOTAL** |  **198** |   **54** | **73%** |           |
 
 
 ## Setup coverage badge
