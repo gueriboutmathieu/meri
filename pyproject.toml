@@ -94,5 +94,5 @@ docstring-code-line-length = "dynamic"
 
 [tool.pyright]
 typeCheckingMode = "strict"
-include = ["meri"]
+include = ["meri", "tests"]
 exclude = ["*.venv/**", ".github/*"]

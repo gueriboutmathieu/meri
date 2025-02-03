@@ -9,7 +9,6 @@ from meri.routes.fastapi_app import FastapiApp
 from meri.repositories.statement_repository import StatementRepository
 from meri.services.embedding_service import EmbeddingService
 from meri.services.llm_service import LlmService
-from meri.services.transcription_service import TranscriptionService
 
 
 class MockedCommandContext:
@@ -17,7 +16,6 @@ class MockedCommandContext:
         self._llm_service = LlmService("", "")
         self._embedding_service = EmbeddingService("", "", 0)
         self._statement_repository = StatementRepository(Session(), Logger(__name__))
-        self._transcription_service = TranscriptionService("", "")
 
     @property
     def llm_service(self):
@@ -30,10 +28,6 @@ class MockedCommandContext:
     @property
     def statement_repository(self):
         return self._statement_repository
-
-    @property
-    def transcription_service(self):
-        return self._transcription_service
 
     def commit(self) -> None:
         pass
@@ -53,13 +47,13 @@ def test_client():
 
 def test_llm_routes_query_statement(mocker: MockerFixture, test_client: TestClient):
     mocker.patch.object(domain, "query_llm", return_value="C'est noté !")
-    response = test_client.post("/query", files={"file": ("audio.mp3", b"I am a statement.", "audio/mpeg")})
+    response = test_client.post("/query", params={"user_prompt": "I am a statement."})
     assert response.status_code == 200
     assert response.json() == "C'est noté !"
 
 
 def test_llm_routes_query_question(mocker: MockerFixture, test_client: TestClient):
     mocker.patch.object(domain, "query_llm", return_value="A question is the opposite of a statement.")
-    response = test_client.post("/query", files={"file": ("audio.mp3", b"What is a question ?", "audio/mpeg")})
+    response = test_client.post("/query", params={"user_prompt": "What is a question ?"})
     assert response.status_code == 200
     assert response.json() == "A question is the opposite of a statement."
