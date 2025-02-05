@@ -2,6 +2,16 @@
 
 Your loyal companion, helping you stay organized and remember what truly matters.
 
+Meri Server is a python backend which exposes only 1 endpoint `/query`.
+It takes a string as input, categorize it as `statement` or `question`.
+If this is a statement like `I need to buy some eggs at the store today.`, this sentence will be embed and stored in the database.
+If this is a question like `What do I need to buy to the store today ?`, this sentence will be embed and the database will find nearest statements that best match the question.
+Finally, a Llm will generate an appropriate response based on the question and nearest statements found.
+Technically, this is the level 1 of a RAG (Retrieval-augmented generation) project.
+
+To use Meri, check the frontend apps:
+- [web app](https://github.com/gueriboutmathieu/meri_web.git)
+
 ## Install locally
 
 First, you need [uv](https://github.com/astral-sh/uv) to be installed.
@@ -32,14 +42,34 @@ uv sync
 ## Environment variables
 Create a `.env` file with these variables:
 ```
+SQL_USER=user
+SQL_PASSWORD=password
+SQL_HOST=localhost
+SQL_PORT=55432
+SQL_DATABASE=meri
 OPENAI_API_KEY=<your-openai-api-key>
-OPENAI_MODEL=<openai-model>
+OPENAI_LLM_MODEL=<openai-llm-model>
+OPENAI_EMBEDDING_MODEL=<openai-embedding-model>
+VECTOR_DIMENSIONS=1536
+VECTOR_DATABASE_FILE_PATH=vector_database.bin
 ```
 
 ## Run locally
 Run postgresql database:
 ```shell
 docker compose up -d
+```
+
+In order to run migrations, you may need to export your env vars:
+```shell
+set -a
+source .env
+set +a
+```
+
+Run migrations:
+```shell
+alembic upgrade head
 ```
 
 Run the app:
